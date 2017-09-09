@@ -15,3 +15,6 @@ class Bus():
 
     def drop_off(self, passenger):
         self.__passengers.remove(passenger)
+
+    def empty(self):
+        self.__passengers = []
