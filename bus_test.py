@@ -11,6 +11,8 @@ class BusTest(unittest.TestCase):
     def test_destination(self):
         self.assertEqual(self.bus.destination, "Braehead")
 
+    def test_drive(self):
+        self.assertEqual(self.bus.drive(), "Vroom vroom")
 
 if __name__ == '__main__':
     unittest.main()
