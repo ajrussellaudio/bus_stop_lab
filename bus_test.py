@@ -19,8 +19,15 @@ class BusTest(unittest.TestCase):
         self.assertEqual(self.bus.passenger_count(), 0)
 
     def test_pick_up(self):
-        self.bus.pick_up(Person("Alan", 35))
+        passenger = Person("Alan", 35)
+        self.bus.pick_up(passenger)
         self.assertEqual(self.bus.passenger_count(), 1)
+
+    def test_drop_off(self):
+        passenger = Person("Alan", 35)
+        self.bus.pick_up(passenger)
+        self.bus.drop_off(passenger)
+        self.assertEqual(self.bus.passenger_count(), 0)
 
 
 if __name__ == '__main__':
