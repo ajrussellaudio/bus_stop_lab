@@ -1,5 +1,6 @@
 import unittest
 from bus import Bus
+from bus_stop import BusStop
 from person import Person
 
 class BusTest(unittest.TestCase):
@@ -35,6 +36,13 @@ class BusTest(unittest.TestCase):
         self.bus.empty()
         self.assertEqual(self.bus.passenger_count(), 0)
 
+    def test_pick_up_from_stop(self):
+        bus_stop = BusStop("Partick Interchange")
+        bus_stop.add(Person("Alan", 35))
+        bus_stop.add(Person("Marj", 31))
+        self.bus.pick_up_from_stop(bus_stop)
+        self.assertEqual(self.bus.passenger_count(), 2)
+        self.assertEqual(bus_stop.queue_length(), 0)
 
 if __name__ == '__main__':
     unittest.main()
