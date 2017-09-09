@@ -9,5 +9,5 @@ class BusStop():
     def add(self, person):
         self.queue.append(person)
 
-    def remove(self):
-        return self.queue.pop(0)
+    def remove(self, person):
+        self.queue.remove(person)

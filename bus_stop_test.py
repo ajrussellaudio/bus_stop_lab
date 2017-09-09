@@ -19,13 +19,10 @@ class BusStopTest(unittest.TestCase):
         self.assertEqual(self.bus_stop.queue_length(), 1)
 
     def test_remove(self):
-        person1 = Person("Alan", 35)
-        person2 = Person("Marj", 31)
-        self.bus_stop.add(person1)
-        self.bus_stop.add(person2)
-        removed = self.bus_stop.remove()
-        self.assertEqual(removed, person1)
-        self.assertEqual(self.bus_stop.queue_length(), 1)
+        person = Person("Alan", 35)
+        self.bus_stop.add(person)
+        self.bus_stop.remove(person)
+        self.assertEqual(self.bus_stop.queue_length(), 0)
 
 
 if __name__ == '__main__':
