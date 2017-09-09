@@ -17,7 +17,7 @@ class Bus():
         self.__passengers.remove(passenger)
 
     def empty(self):
-        self.__passengers = []
+        self.__passengers.clear()
 
     def pick_up_from_stop(self, stop):
         for passenger in stop.queue.copy():
