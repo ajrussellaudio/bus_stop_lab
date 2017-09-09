@@ -1,5 +1,6 @@
 import unittest
 from bus import Bus
+from person import Person
 
 class BusTest(unittest.TestCase):
     def setUp(self):
@@ -16,6 +17,11 @@ class BusTest(unittest.TestCase):
 
     def test_passengers(self):
         self.assertEqual(self.bus.passenger_count(), 0)
+
+    def test_pick_up(self):
+        self.bus.pick_up(Person("Alan", 35))
+        self.assertEqual(self.bus.passenger_count(), 1)
+
 
 if __name__ == '__main__':
     unittest.main()
